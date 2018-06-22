@@ -6,13 +6,13 @@ var earth;
 function setup(){
   createCanvas(800,800);
 
-  for( var i = 0; i < 320; i++){
+  for( var i = 0; i < 220; i++){
     particles[i] = new Particle();
   }
   for( var i = 0; i < 20; i++){
     stars[i] = new Particle();
   }
-  earth = new Particle(createVector(width/2, height/2), createVector(0,0),30);
+  earth = new Particle(createVector(width/2, height/2), createVector(0,0),20);
 }
 
 
@@ -36,7 +36,7 @@ function draw(){
         let g = particles[y].attraction(particles[x]);
         particles[y].applyForce(g);
         // find & seek nearest
-        if (d < record && d > particles[x].r + 3){
+        if (d < record && d > particles[x].r + 1){
           record = d;
           let closest = particles[x];
           let force = particles[y].seek(closest);

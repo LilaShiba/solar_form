@@ -1,12 +1,12 @@
 class Particle{
 
-  constructor(pos = createVector(random(0,800), random(0,800)), vel = createVector(0,1), r = 3){
+  constructor(pos = createVector(random(0,800), random(0,800)), vel = createVector(0,1), r = 1){
     this.pos = pos;
     this.r = r;
     this.vel = vel;
     this.acc = createVector();
-    this.maxspeed = 7;
-    this.maxforce = 5;
+    this.maxspeed = 5;
+    this.maxforce = 10;
     this.G = 6.67
   }
 
