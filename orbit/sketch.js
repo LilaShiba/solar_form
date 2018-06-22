@@ -41,15 +41,16 @@ function draw(){
           let closest = particles[x];
           let force = particles[y].seek(closest);
           particles[y].applyForce(force);
-          let f = earth.attraction(particles[x]);
-          particles[x].applyForce(f);
+        //  let f = earth.attraction(particles[x]);
+        //  particles[x].applyForce(f);
         }
         // once particles hit
-        if(particles[y].hits(particles[x]) && particles[x].r < 9){
-          if(particles[y].r < 9){
-          particles.splice(particles[y], 1)
-        }
-          particles[x].r = 10;
+        if(particles[y].hits(particles[x]) && particles[x].r < 9 && particles[x] !== particles[y] ){
+            particles[x].r = particles[x].r + 1;
+          if(particles[y].r < 9 && particles.length > 1){
+            particles.splice(particles[y], 1)
+            break;
+          }
         }
       }
     }
