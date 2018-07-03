@@ -5,9 +5,9 @@ class Particle{
     this.r = r;
     this.vel = vel;
     this.acc = createVector();
-    this.maxspeed = 5;
-    this.maxforce = 10;
-    this.G = 6.67
+    this.maxspeed = 7;
+    this.maxforce = 2;
+    this.G = 6.67408;
   }
 
   show(){
@@ -47,7 +47,7 @@ class Particle{
     // normalize
     force.normalize();
     // get that gravitional force
-    let strength = (this.G * this.r * m.r)/(distance * distance);;
+    let strength = (this.G * this.r * m.r)/(distance * distance);
     // force vector = magnitude * direction
     force.mult(strength);
     return force;
