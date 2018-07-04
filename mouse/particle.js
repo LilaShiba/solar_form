@@ -1,8 +1,8 @@
 
 class Particle{
   constructor(
-    pos = createVector(random(0,800), random(0,800)),
-    vel = createVector(12,8),
+    pos = createVector(random(displayWidth), random(displayHeight)),
+    vel = createVector(random(5,15),random(-5,5)),
     r = random(1,10)
   ){
     this.pos = pos;
@@ -16,8 +16,8 @@ class Particle{
 
   show(){
 
-    point(this.pos.x, this.pos.y);
-    //ellipse(this.pos.x, this.pos.y, this.r, this.r);
+
+    ellipse(this.pos.x, this.pos.y, this.r, this.r);
   }
 
   update(){
