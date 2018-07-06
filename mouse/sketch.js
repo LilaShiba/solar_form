@@ -16,10 +16,9 @@ function setup(){
 function draw(){
   stroke(0);
   strokeWeight(4);
-  background(value);
+  col = map(particles[0].pos.x, 0, displayWidth, 0,255);
+  background(col);
   sun.show()
-
-
   for (p of particles){
     p.show()
     p.update()
